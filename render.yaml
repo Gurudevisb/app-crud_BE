@@ -1,33 +1,33 @@
 services:
   - type: web
     name: app-crud
-    env: live
-    branch: main # Your Git branch to deploy (e.g., main or master).
-    region: oregon # Choose a region close to your users.
-    dockerfilePath: Dockerfile # Render uses your Dockerfile for setup.
-    plan: free # Use the free tier.
+    env: php
+    branch: main  # Git branch to deploy
+    region: oregon  # Choose region close to users
+    dockerfilePath: Dockerfile  # Path to your Dockerfile
+    plan: free  # Free tier deployment
 
- ports:
+    # Port binding (make sure you expose port 80)
+    ports:
       - "80:80"  # This binds port 80 on your machine to port 80 in the container
-    volumes:
-      - .:/var/www/html
-    networks:
-      - laravel-network
 
     envVars:
       - key: APP_KEY
-        value:base64:uLxjQo4bZ48Rtl3uF6Qc6UtpJkWfIA2ni5aTT1RqtS8= # Replace with your actual app key.
+        value: base64:uLxjQo4bZ48Rtl3uF6Qc6UtpJkWfIA2ni5aTT1RqtS8=  # Replace with actual app key
       - key: APP_ENV
         value: production
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
-        value: 127.0.0.1
+        value: <your-database-host>
       - key: DB_PORT
         value: 3306
       - key: DB_DATABASE
         value: app-crud
       - key: DB_USERNAME
-        value:root
+        value: root
       - key: DB_PASSWORD
         value: <your-database-password>
+
+networks:
+  - laravel-network
