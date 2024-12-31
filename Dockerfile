@@ -43,7 +43,7 @@ RUN sed -i 's|/var/www/html|/var/www/app-crud/public|' /etc/apache2/sites-availa
 EXPOSE 80
 
 # Start the container
-# CMD ["apache2-foreground"]
+ CMD ["apache2-foreground"]
 
 # Start the PHP server
-CMD ["php", "-S", "0.0.0.0:80", "-t", "public"]
+#CMD ["php", "-S", "0.0.0.0:80", "-t", "public"]
