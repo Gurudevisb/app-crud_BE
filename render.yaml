@@ -6,6 +6,14 @@ services:
     region: oregon # Choose a region close to your users.
     dockerfilePath: Dockerfile # Render uses your Dockerfile for setup.
     plan: free # Use the free tier.
+
+ ports:
+      - "80:80"  # This binds port 80 on your machine to port 80 in the container
+    volumes:
+      - .:/var/www/html
+    networks:
+      - laravel-network
+
     envVars:
       - key: APP_KEY
         value:base64:uLxjQo4bZ48Rtl3uF6Qc6UtpJkWfIA2ni5aTT1RqtS8= # Replace with your actual app key.
