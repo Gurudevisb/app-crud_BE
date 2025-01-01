@@ -2,8 +2,8 @@
     RewriteEngine On
 
 # Rewrite requests to the public directory
-RewriteRule ^(.*)$ public/$1 [L]
-
+# RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule ^(wp-(content|admin|includes).*) - [L]
 
 #     RewriteRule ^(.*)$ public/$1 [L]
 # </IfModule>
