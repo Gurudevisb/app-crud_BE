@@ -70,6 +70,7 @@ Copy code
 php artisan serve
 The application will be accessible at http://localhost:8000.
 
+
 Environment Configuration
 Ensure that the .env file is properly configured. The essential configuration for the database and application environment can be found below:
 
@@ -96,13 +97,21 @@ Available Routes
 Here are the primary routes available in this application:
 
 /: The home page, displays a welcome message.
+
 /stock: View all stock items.
+
 /stock/create: Create a new stock item.
+
 /stock/{stock}/edit: Edit an existing stock item.
+
 /stock/{stock}/update: Update the stock item.
+
 /stock/{stock}/destroy: Delete a stock item.
+
 /dashboard: View the stock dashboard.
+
 /profile: Edit and manage your user profile.
+
 Authentication
 The app uses Laravel's built-in authentication system. The login and registration pages are provided by the laravel/breeze package. You can register, log in, and edit your profile once you're authenticated.
 
@@ -112,14 +121,19 @@ Development
 You can run the application locally by using:
 
 php artisan serve for the backend server.
+
 npm run dev to compile assets with Vite.
+
 To run database migrations or other commands, use the following:
 
 bash
 Copy code
 php artisan migrate
+
 php artisan db:seed
+
 php artisan key:generate
+
 Testing
 The app uses Pest and PHPUnit for testing. You can run tests with the following command:
 
